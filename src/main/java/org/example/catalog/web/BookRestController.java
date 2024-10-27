@@ -21,6 +21,5 @@ public class BookRestController {
     public List<Book> searchBooks(@RequestParam String keywords) {
         return bookRepository.searchByKeywords(keywords);
     }
-
 }
 
