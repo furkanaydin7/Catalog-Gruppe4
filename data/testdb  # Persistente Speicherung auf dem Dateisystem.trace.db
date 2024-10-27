@@ -1,0 +1,12 @@
+2024-10-27 17:19:50.746239+01:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "BOOK" nicht gefunden (diese Datenbank ist leer)
+Table "BOOK" not found (this database is empty); SQL statement:
+select b1_0.isbn,b1_0.author,b1_0.description,b1_0.title from book b1_0 [42104-224]
+2024-10-27 17:19:50.757835+01:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "BOOK" nicht gefunden (diese Datenbank ist leer)
+Table "BOOK" not found (this database is empty); SQL statement:
+select b1_0.isbn,b1_0.author,b1_0.description,b1_0.title from book b1_0 [42104-224]
+2024-10-27 17:19:50.763124+01:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabelle "BOOK" nicht gefunden (diese Datenbank ist leer)
+Table "BOOK" not found (this database is empty); SQL statement:
+select b1_0.isbn,b1_0.author,b1_0.description,b1_0.title from book b1_0 [42104-224]

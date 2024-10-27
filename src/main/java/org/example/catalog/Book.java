@@ -21,7 +21,6 @@ public class Book {
         this.description = description;
         this.author = author;
     }
-
     public String getIsbn() { return isbn; }
     public void setIsbn(String isbn) { this.isbn = isbn; }
 
