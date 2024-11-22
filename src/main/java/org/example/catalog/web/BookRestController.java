@@ -14,11 +14,14 @@ import java.util.List;
 @RequestMapping("/api/books")
 public class BookRestController {
 
-    @Autowired
-    private BookRepository bookRepository;
+    private final BookRepository bookRepository;
 
-    @GetMapping("/search")
-    public List<Book> searchBooks(@RequestParam String keywords) {
+    public BookRestController(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
+
+    @GetMapping
+    public List<Book> searchBooks(@RequestParam(required = false) String keywords) {
         return bookRepository.searchByKeywords(keywords);
     }
 }
