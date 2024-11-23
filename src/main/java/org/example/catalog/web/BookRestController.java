@@ -22,6 +22,9 @@ public class BookRestController {
 
     @GetMapping
     public List<Book> searchBooks(@RequestParam(required = false) String keywords) {
+        if (keywords == null || keywords.isBlank()) {
+            return bookRepository.findAll(); // Alle Bücher zurückgeben
+        }
         return bookRepository.searchByKeywords(keywords);
     }
 }
