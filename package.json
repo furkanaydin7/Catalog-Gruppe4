@@ -1,0 +1,17 @@
+{
+  "name": "catalog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://furkanaydin0586@dev.azure.com/furkanaydin0586/Gruppe%201/_git/Catalog"
+  },
+  "private": true,
+  "dependencies": {
+    "@playwright/test": "^1.49.0"
+  }
+}
