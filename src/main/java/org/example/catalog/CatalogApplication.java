@@ -21,9 +21,9 @@ public class CatalogApplication {
 
     @PostConstruct
     public void createTestData() {
-        bookRepository.save(new Book("978-3-16-148410-0", "Spring Boot in Action", "A comprehensive guide to Spring Boot.", "Craig Walls"));
-        bookRepository.save(new Book("978-1-491-92435-0", "Learning Spring Boot", "Simplify your development with Spring Boot.", "Greg L. Turnquist"));
-        bookRepository.save(new Book("978-0-596-52068-7", "Java Programming", "An introduction to programming in Java.", "Kathy Sierra"));
+        bookRepository.save(new Book("9783161484100", "Spring Boot in Action", "A comprehensive guide to Spring Boot.", "Craig Walls"));
+        bookRepository.save(new Book("9781491924350", "Learning Spring Boot", "Simplify your development with Spring Boot.", "Greg L. Turnquist"));
+        bookRepository.save(new Book("9780596520687", "Java Programming", "An introduction to programming in Java.", "Kathy Sierra"));
     }
 
 }
