@@ -9,6 +9,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: your_username
+          POSTGRES_PASSWORD: your_password
+          POSTGRES_DB: your_database
+        ports:
+          - 5432:5432
+
     steps:
       # Schritt 1: Code auschecken
       - name: Checkout Code
