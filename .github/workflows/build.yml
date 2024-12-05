@@ -1,0 +1,62 @@
+name: Build and Deploy Microservices
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Schritt 1: Code auschecken
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'adopt'
+
+      # Schritt 2: Maven-Abhängigkeiten cachen
+      - name: Cache Maven dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      # Schritt 3: Maven-Build und Docker Image erstellen
+      - name: Build Docker Image
+        run: mvn spring-boot:build-image -DskipTests
+
+      # Schritt 4: Tests ausführen
+      - name: Run Unit Tests
+        run: mvn test
+
+      # Schritt 5: Coverage-Ergebnisse generieren
+      - name: Generate Code Coverage Report
+        run: mvn jacoco:report
+
+      # Schritt 6: Coverage-Ergebnisse hochladen
+      - name: Upload Coverage Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: target/site/jacoco/
+
+      # Schritt 7: Docker Login
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      # Schritt 8: Docker Image pushen
+      - name: Push Docker Image
+        run: |
+          docker tag catalog:0.0.1-SNAPSHOT ${{ secrets.DOCKER_USERNAME }}/catalog:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/catalog:latest
