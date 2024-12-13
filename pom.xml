@@ -79,9 +79,30 @@
             <artifactId>postgresql</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.gatling/gatling-core-java -->
+        <dependency>
+            <groupId>io.gatling</groupId>
+            <artifactId>gatling-core-java</artifactId>
+            <version>3.13.1</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.gatling/gatling-http-java -->
+        <dependency>
+            <groupId>io.gatling</groupId>
+            <artifactId>gatling-http-java</artifactId>
+            <version>3.13.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.gatling.highcharts/gatling-charts-highcharts -->
+        <dependency>
+            <groupId>io.gatling.highcharts</groupId>
+            <artifactId>gatling-charts-highcharts</artifactId>
+            <version>3.13.1</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
+        <testSourceDirectory>src/test/java</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -112,6 +133,18 @@
                         <id>report-generation</id>
                         <goals>
                             <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>io.gatling</groupId>
+                <artifactId>gatling-maven-plugin</artifactId>
+                <version>4.11.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>test</goal>
                         </goals>
                     </execution>
                 </executions>
