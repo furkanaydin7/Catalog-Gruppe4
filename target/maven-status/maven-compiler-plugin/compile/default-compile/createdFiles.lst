@@ -1,0 +1,4 @@
+org/example/catalog/CatalogApplication.class
+org/example/catalog/web/BookRestController.class
+org/example/catalog/repository/BookRepository.class
+org/example/catalog/Book.class
