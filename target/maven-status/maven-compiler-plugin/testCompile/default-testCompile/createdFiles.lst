@@ -1,4 +1,6 @@
 org/example/catalog/CatalogApplicationTests.class
+simulations/BasicLoadTest.class
 org/example/catalog/web/BookRestControllerWebMvcTest.class
 org/example/catalog/repository/BookRepositoryTest.class
+org/example/catalog/TestcontainersConfiguration.class
 org/example/catalog/web/BookRestControllerSpringBootTest.class
