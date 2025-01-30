@@ -23,6 +23,12 @@
 3. Bücher anzeigen: [`http://localhost:8080/api/books`](http://localhost:8080/api/books)
 4. Buchsuche: [`http://localhost:8081/`](http://localhost:8081/)
 
+## Buchsuche
+- Schlüsselwörter entweder in das Feld "Nach Büchern suchen..." oder über den Pfad mit http://localhost:8080/api/books?keywords=
+- Ein Buch kann auch über den Pfad mit der ISBN-Nummer gesucht werden mit bspw. http://localhost:8080/api/books/9783161484100
+- Nach der Suche kann mit Eingabe einer Leerzeile in das Feld und klicken auf "Suchen"-Button wieder die ganze Liste angezeigt werden
+- Ein Buch kann über den Button "Zum Warenkorb hinzufügen" oder über den Pfad mit http://localhost:8081/cart/add/ hinzugefügt werden
+
 ## Tests
 
 ### Unit-Tests
